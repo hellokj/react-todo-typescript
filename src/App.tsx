@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import Box from './features/todo/Box';
+import AddTodo from './features/todo/AddTodo';
+import TodoList from './features/todo/TodoList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Box/>
+    <div>
+      <header className='App'>
+        <AddTodo/>
+        <TodoList/>
       </header>
     </div>
   );

@@ -1,12 +1,12 @@
 import React from "react";
+import styles from './Todo.module.css';
 
 export function Todo(props:any){
     const { title } = props 
     return (<>
-        <div className="">
+        <div className={styles.todo}>
             <input type="checkbox"></input>
             <div>{title}</div>
-            <button>Edit</button>
             <button>Delete</button>
         </div>
     </>)
