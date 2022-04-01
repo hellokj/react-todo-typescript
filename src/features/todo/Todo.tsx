@@ -7,11 +7,12 @@ export enum Action {
     Edit
 }
 
-const Todo : React.FC<TodoItem> = ({id, isComplete, description}: TodoItem) => { 
+const Todo = ({id, isComplete, description}: TodoItem) => {
+
     return (<>
-        <div className={styles.todo}>
-            <input type="checkbox" checked={isComplete}></input>
-            <div>{description}</div>
+        <div key={id} className={styles.todo}>
+            <input type="checkbox" checked={isComplete} onChange={e => console.log(e)}></input>
+            <p>{description}</p>
             <button>Delete</button>
         </div>
     </>)
