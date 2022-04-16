@@ -1,19 +1,18 @@
 import React from "react";
 import styles from './Todo.module.css';
-import { TodoItem } from "./TodoList";
+import { TodoItem } from "../../app/type"
+import { useDispatch } from "react-redux";
 
-export enum Action {
-    Delete,
-    Edit
-}
+import { deleteTodo } from "../../app/reducer";
 
 const Todo = ({id, isComplete, description}: TodoItem) => {
+    const dispatch = useDispatch()
 
     return (<>
         <div key={id} className={styles.todo}>
             <input type="checkbox" checked={isComplete} onChange={e => console.log(e)}></input>
             <p>{description}</p>
-            <button>Delete</button>
+            <button onClick={(e) => {dispatch(deleteTodo({id: id}))}}>Delete</button>
         </div>
     </>)
 }
